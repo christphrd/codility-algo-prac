@@ -21,5 +21,24 @@ expected worst-case space complexity is O(N) (not counting the storage required 
 */
 
 function solution(A) {
-    // write your code in JavaScript (Node.js 8.9.4)
+    //make arr of positive int from 1 to 1000000
+    let positiveIntArr = []
+    let counter = 0
+    while (counter < 1000000) {
+      counter++
+      positiveIntArr.push(counter)
+    }
+
+    //iterate through A and remove from positive arr
+    for (let i = 0; i < A.length; i++) {
+      if (A[i] > 0) {
+        let index = positiveIntArr.indexOf(A[i]);
+        if (index > -1) {
+          positiveIntArr.splice(index, 1);
+        }
+      }
+    }
+
+    //return first element from positive arr
+    return positiveIntArr[0]
 }
