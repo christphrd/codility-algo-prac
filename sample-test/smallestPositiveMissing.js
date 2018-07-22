@@ -21,24 +21,22 @@ expected worst-case space complexity is O(N) (not counting the storage required 
 */
 
 function solution(A) {
-    //make arr of positive int from 1 to 1000000
+    //make arr of positive int from 1 to 1000000; time O(n); space O(n)
     let positiveIntArr = []
-    let counter = 0
-    while (counter < 1000000) {
-      counter++
-      positiveIntArr.push(counter)
+    for (let i = 1; i <= 1000000; i++) {
+      positiveIntArr.push(i)
     }
 
-    //iterate through A and remove from positive arr
+    //iterate through A and remove from positive arr; time O(n^2); space
     for (let i = 0; i < A.length; i++) {
       if (A[i] > 0) {
-        let index = positiveIntArr.indexOf(A[i]);
+        let index = positiveIntArr.indexOf(A[i]); //iterates...
         if (index > -1) {
           positiveIntArr.splice(index, 1);
         }
       }
     }
 
-    //return first element from positive arr
+    //return first element from positive arr; time O(1)
     return positiveIntArr[0]
 }
