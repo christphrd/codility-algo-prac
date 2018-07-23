@@ -20,6 +20,28 @@ expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
 */
 
+/*Try 2. Big O either O(n) or O(nlogn). 100% correctness. 100% performance
+function solution(A) {
+  //sort array. sort() time and space complexity varies
+  let arrSortedAsc = A.sort((a,b) => {return a - b})
+
+  //then check each element with counter. time O(n)
+  let counter = 1
+  for (let i = 0; i < A.length; i++) {
+    if (arrSortedAsc[i] === counter) {
+      counter++
+    }
+
+    if (counter < arrSortedAsc[i]) {
+      return counter
+    }
+  }
+
+  return counter
+}
+*/
+
+/*First try. Codility says O(n^2). 100% correctness. 0% performance
 function solution(A) {
     //make arr of positive int from 1 to 1000000; time O(n); space O(n)
     let positiveIntArr = []
@@ -40,3 +62,4 @@ function solution(A) {
     //return first element from positive arr; time O(1)
     return positiveIntArr[0]
 }
+*/
