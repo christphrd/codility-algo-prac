@@ -20,10 +20,19 @@ expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
 */
 
-//Try 3.
+//Try 3. Research: http://theoryofprogramming.com/2017/12/17/first-missing-integer-unsorted-array/
 function solution(A) {
+  //key insight: answer will always be from 1 to A.length + 1, inclusive
 
+  //keep track of the presence of values in stack
+  let isInA = []
+  for (let i = 0; i < A.length; i++) {
+    if (A[i] > 0 && A[i] <= A.length) {
+      isInA[A[i]] = true
+    }
+  }
 
+  return isInA
 
 }
 
