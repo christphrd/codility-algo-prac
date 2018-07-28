@@ -20,9 +20,16 @@ expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
 */
 
+//Try 3.
+function solution(A) {
+
+
+
+}
+
 /*Try 2. Big O either O(n) or O(nlogn). 100% correctness. 100% performance
 function solution(A) {
-  //sort array. sort() time and space complexity varies
+  //sort array. sort() time and space complexity varies. Most likely O(nlogn)
   let arrSortedAsc = A.sort((a,b) => {return a - b})
 
   //then check each element with counter. time O(n)
@@ -43,7 +50,7 @@ function solution(A) {
 
 /*First try. Codility says O(n^2). 100% correctness. 0% performance
 function solution(A) {
-    //make arr of positive int from 1 to 1000000; time O(n); space O(n)
+    //make arr of positive int from 1 to 1000000; time O(n); space
     let positiveIntArr = []
     for (let i = 1; i <= 1000000; i++) {
       positiveIntArr.push(i)
@@ -52,7 +59,7 @@ function solution(A) {
     //iterate through A and remove from positive arr; time O(n^2); space
     for (let i = 0; i < A.length; i++) {
       if (A[i] > 0) {
-        let index = positiveIntArr.indexOf(A[i]); //iterates...
+        let index = positiveIntArr.indexOf(A[i]); //iterates... so iteration within iteration
         if (index > -1) {
           positiveIntArr.splice(index, 1);
         }
@@ -63,3 +70,7 @@ function solution(A) {
     return positiveIntArr[0]
 }
 */
+
+console.log("5?", solution([1, 3, 6, 4, 1, 2]))
+console.log("4?", solution([1, 2, 3]))
+console.log("1?", solution([-1, -3]))
