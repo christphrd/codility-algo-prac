@@ -33,9 +33,9 @@ function solution(A) {
   }
 
   //added for array of negatives case
-  if (isInA.length === 0) {
-    return 1
-  }
+  // if (isInA.length === 0) {
+  //   return 1
+  // }
 
   // time O(n)
   //iterate through array from 1 to A.length. If something does not exist, return the number
@@ -45,7 +45,7 @@ function solution(A) {
     }
   }
 
-  return A.length + 1
+  return isInA.length === 0 ? 1 : A.length //correction for 2 failing codility test cases
 }
 
 /*Try 2. Big O either O(n) or O(nlogn). 100% correctness. 100% performance
