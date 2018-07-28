@@ -21,6 +21,7 @@ expected worst-case space complexity is O(N) (not counting the storage required 
 */
 
 //Try 3. Research: http://theoryofprogramming.com/2017/12/17/first-missing-integer-unsorted-array/
+//Codility 100% correctness & 100% performance.
 function solution(A) {
   //key insight: answer will always be from 1 to A.length + 1, inclusive
 
@@ -32,20 +33,12 @@ function solution(A) {
     }
   }
 
-  //added for array of negatives case
-  // if (isInA.length === 0) {
-  //   return 1
-  // }
-
-  // time O(n)
-  //iterate through array from 1 to A.length. If something does not exist, return the number
-  for (let i = 1; i < isInA.length; i++) {
-    if (!isInA[i]) {
-      return i
+  // iterate through arr and check if exists in A. If not, return it. time O(n)
+  for (let i = 0; i <= isInA.length; i++) {
+    if (!isInA[i + 1]) {
+      return i + 1
     }
   }
-
-  return isInA.length === 0 ? 1 : A.length //correction for 2 failing codility test cases
 }
 
 /*Try 2. Big O either O(n) or O(nlogn). 100% correctness. 100% performance
