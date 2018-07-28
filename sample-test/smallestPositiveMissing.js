@@ -32,8 +32,15 @@ function solution(A) {
     }
   }
 
-  return isInA
+  //iterate through array from 1 to A.length. If something does not exist, return the number
+  for (let i = 1; i < isInA.length; i++) {
+    if (!isInA[i]) {
+      return i
+    }
+  }
 
+  //return A.length + 1
+  return A.length + 1
 }
 
 /*Try 2. Big O either O(n) or O(nlogn). 100% correctness. 100% performance
