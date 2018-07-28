@@ -24,7 +24,7 @@ expected worst-case space complexity is O(N) (not counting the storage required 
 function solution(A) {
   //key insight: answer will always be from 1 to A.length + 1, inclusive
 
-  //keep track of the presence of values in stack
+  //keep track of the presence of values in stack. time O(n)
   let isInA = []
   for (let i = 0; i < A.length; i++) {
     if (A[i] > 0 && A[i] <= A.length) {
@@ -32,6 +32,12 @@ function solution(A) {
     }
   }
 
+  //added for array of negatives case
+  if (isInA.length === 0) {
+    return 1
+  }
+
+  // time O(n)
   //iterate through array from 1 to A.length. If something does not exist, return the number
   for (let i = 1; i < isInA.length; i++) {
     if (!isInA[i]) {
@@ -39,7 +45,6 @@ function solution(A) {
     }
   }
 
-  //return A.length + 1
   return A.length + 1
 }
 
