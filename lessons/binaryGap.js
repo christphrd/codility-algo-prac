@@ -23,6 +23,29 @@ expected worst-case space complexity is O(1).
 function solution(N) {
     // write your code in JavaScript (Node.js 8.9.4)
     //convert integer to binary representation
+    let binary = convertIntToBin(N)
+    console.log(binary)
 
-    
+    //
 }
+
+function convertIntToBin(dec) {
+  let bits = [];
+  let dividend = dec;
+  let remainder = 0;
+  while (dividend >= 2) {
+      remainder = dividend % 2;
+      bits.push(remainder);
+      dividend = (dividend - remainder) / 2;
+  }
+  bits.push(dividend);
+  bits.reverse();
+  return bits.join("");
+}
+
+console.log("1001", convertIntToBin(9), (Number(1001) === Number(convertIntToBin(9))))
+console.log("1000010001", convertIntToBin(529), (Number(1000010001) === Number(convertIntToBin(529))))
+console.log("10100", convertIntToBin(20), (Number(10100) === Number(convertIntToBin(20))))
+console.log("1111", convertIntToBin(15), (Number(1111) === Number(convertIntToBin(15))))
+console.log("100000", convertIntToBin(32), (Number(100000) === Number(convertIntToBin(32))))
+console.log("10000010001", convertIntToBin(1041), (Number(10000010001) === Number(convertIntToBin(1041))))
