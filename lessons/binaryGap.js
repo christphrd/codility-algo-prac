@@ -19,3 +19,10 @@ Complexity:
 expected worst-case time complexity is O(log(N));
 expected worst-case space complexity is O(1).
 */
+
+function solution(N) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    //convert integer to binary representation
+
+    
+}
