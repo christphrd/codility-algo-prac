@@ -23,10 +23,17 @@ expected worst-case space complexity is O(1).
 function solution(N) {
     // write your code in JavaScript (Node.js 8.9.4)
     //convert integer to binary representation
-    let binary = convertIntToBin(N)
-    console.log(binary)
+    let binaryArr = convertIntToBin(N).split()
 
-    //
+    let gapCount = []
+    let count = 0
+    //count zeroes in-between ones.
+    for (let i = 0; i < binaryArr.length; i++) {
+      //conditionals?
+    }
+
+    //return greatest count
+    return gapCount.length === 0 ? 0 : gapCount[0]
 }
 
 function convertIntToBin(dec) {
