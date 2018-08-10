@@ -23,7 +23,7 @@ expected worst-case space complexity is O(1).
 function solution(N) {
     // write your code in JavaScript (Node.js 8.9.4)
     //convert integer to binary representation
-    let binaryArr = convertIntToBin(N).split()
+    let binaryArr = convertIntToBin(N).split("")
 
     let gapCount = []
     let count = 0
@@ -68,3 +68,5 @@ console.log("10100", convertIntToBin(20), (Number(10100) === Number(convertIntTo
 console.log("1111", convertIntToBin(15), (Number(1111) === Number(convertIntToBin(15))))
 console.log("100000", convertIntToBin(32), (Number(100000) === Number(convertIntToBin(32))))
 console.log("10000010001", convertIntToBin(1041), (Number(10000010001) === Number(convertIntToBin(1041))))
+console.log("---------------------")
+console.log(solution(9))
