@@ -30,18 +30,18 @@ function solution(N) {
     //count zeroes in-between ones.
     for (let i = 0; i < binaryArr.length; i++) {
       //conditionals?
-      if (binaryArr[i - 1] === 1 && binaryArr[i] === 0 && count === 0) {
+      if (binaryArr[i - 1] === "1" && binaryArr[i] === "0" && count === 0) {
         count++
-      } else if (binaryArr[i] === 0 && count > 0) {
+      } else if (binaryArr[i] === "0" && count > 0) {
         count++
-      } else if (binaryArr[i] === 1 && count > 0) {
+      } else if (binaryArr[i] === "1" && count > 0) {
         gapCount.push(count)
         count = 0
       }
     }
 
     //return greatest count
-    return gapCount.length === 0 ? 0 : gapCount.max
+    return gapCount.length === 0 ? 0 : Math.max.apply( Math, gapCount )
 }
 
 function convertIntToBin(dec) {
@@ -58,10 +58,6 @@ function convertIntToBin(dec) {
   return bits.join("");
 }
 
-Array.max = function( array ){
-  return Math.max.apply( Math, array );
-};
-
 console.log("1001", convertIntToBin(9), (Number(1001) === Number(convertIntToBin(9))))
 console.log("1000010001", convertIntToBin(529), (Number(1000010001) === Number(convertIntToBin(529))))
 console.log("10100", convertIntToBin(20), (Number(10100) === Number(convertIntToBin(20))))
@@ -70,3 +66,8 @@ console.log("100000", convertIntToBin(32), (Number(100000) === Number(convertInt
 console.log("10000010001", convertIntToBin(1041), (Number(10000010001) === Number(convertIntToBin(1041))))
 console.log("---------------------")
 console.log(solution(9))
+console.log(solution(529))
+console.log(solution(20))
+console.log(solution(15))
+console.log(solution(32))
+console.log(solution(1041))
