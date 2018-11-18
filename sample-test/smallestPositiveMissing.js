@@ -88,3 +88,5 @@ function solution(A) {
 console.log("5?", solution([1, 3, 6, 4, 1, 2]))
 console.log("4?", solution([1, 2, 3]))
 console.log("1?", solution([-1, -3]))
+
+module.exports = solution
