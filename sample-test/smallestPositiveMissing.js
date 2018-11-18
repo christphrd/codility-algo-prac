@@ -4,12 +4,6 @@ function solution(A);
 
 that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
 
-For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
-
-Given A = [1, 2, 3], the function should return 4.
-
-Given A = [−1, −3], the function should return 1.
-
 Assume that:
 
 N is an integer within the range [1..100,000];
@@ -40,29 +34,5 @@ function solution(A) {
     }
   }
 }
-
-/*Try 2. Big O either O(n) or O(nlogn). 100% correctness. 100% performance
-function solution(A) {
-  //sort array. sort() time and space complexity varies. Most likely O(nlogn)
-  let arrSortedAsc = A.sort((a,b) => {return a - b})
-
-  //then check each element with counter. time O(n)
-  let counter = 1
-  for (let i = 0; i < A.length; i++) {
-    if (arrSortedAsc[i] === counter) {
-      counter++
-    }
-
-    if (counter < arrSortedAsc[i]) {
-      return counter
-    }
-  }
-
-  return counter
-}
-*/
-
-console.log("4?", solution([1, 2, 3]))
-console.log("1?", solution([-1, -3]))
 
 module.exports = solution
