@@ -62,30 +62,6 @@ function solution(A) {
 }
 */
 
-/*First try. Codility says O(n^2). 100% correctness. 0% performance
-function solution(A) {
-    //make arr of positive int from 1 to 1000000; time O(n); space
-    let positiveIntArr = []
-    for (let i = 1; i <= 1000000; i++) {
-      positiveIntArr.push(i)
-    }
-
-    //iterate through A and remove from positive arr; time O(n^2); space
-    for (let i = 0; i < A.length; i++) {
-      if (A[i] > 0) {
-        let index = positiveIntArr.indexOf(A[i]); //iterates... so iteration within iteration
-        if (index > -1) {
-          positiveIntArr.splice(index, 1);
-        }
-      }
-    }
-
-    //return first element from positive arr; time O(1)
-    return positiveIntArr[0]
-}
-*/
-
-console.log("5?", solution([1, 3, 6, 4, 1, 2]))
 console.log("4?", solution([1, 2, 3]))
 console.log("1?", solution([-1, -3]))
 
